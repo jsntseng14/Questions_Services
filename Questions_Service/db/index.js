@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/Question_Service';
+const mongoUri = 'mongodb://18.223.185.85 /Question_Service';
 
 const connect = function () {
   mongoose.connect(mongoUri, {useNewUrlParser: true, useUnifiedTopology: true});
