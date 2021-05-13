@@ -28,11 +28,8 @@ app.get('/qa/questions', (req, res) => {
   var id = req.query.product_id;
   question.findQuestions(id, (error, results) => {
     if(error) {
-      console.log('hello');
       res.send(error);
     } else {
-      console.log('bye');
-      console.log(results);
       res.send(results);
     }
   })
@@ -40,13 +37,10 @@ app.get('/qa/questions', (req, res) => {
 
 app.get('/qa/questions/:question_id/answers', (req, res) => {
   var id = req.params.question_id;
-  console.log(id);
   question.findAnswers(id, (error, results) => {
     if(error) {
-      console.log('hi');
       res.send(error);
     } else {
-      console.log('bye');
       res.send(results);
     }
   })
@@ -59,10 +53,8 @@ app.post('/qa/questions', (req, res) => {
 
   findQuestion.postQuestionByProductId(params.product_id, params.body, params.name, params.photos, (error, results) => {
     if(error) {
-      console.log('hi', error);
       res.send(error);
     } else {
-      console.log('bye');
       res.send(results);
     }
   })
@@ -85,10 +77,8 @@ app.put('/qa/questions/:question_id/report', (req, res) => {
   const id = req.params.question_id;
   question.reportQuestion(id, (error, results) => {
     if(error) {
-      console.log('asdfasd', results);
       res.send(error);
     } else {
-      console.log('bye');
       res.send(results);
     }
   })

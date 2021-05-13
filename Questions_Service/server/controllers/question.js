@@ -18,25 +18,6 @@ exports.postAnswer = (params, body, callback) => {
 
 
 exports.reportQuestion = (id, callback) => {
-  // Mergedquestion.find({'results.question_id': id}, {results: {$elemMatch: {question_id: id}}}, (err, success) => {
-  //   if(err) {
-  //     console.log('hi');
-  //     callback(err);
-  //   } else {
-
-  //   }
-  // });
-
-  // Mergedquestion.updateOne({results: {$elemMatch: {question_id: id}}}, {$set: {}}, (err, success) => {
-  //   if (err) {
-  //     console.log('extorted', err);
-  //     callback(err);
-  //   } else {
-  //     console.log('explan', success)
-  //     callback(success);
-  //   }
-  // });
-
   const filter = {results: {$elemMatch: {question_id: id}}};
   const update = {$set: {'results.0.reported' : true}};
   mongoose.set('useFindAndModify', false);
