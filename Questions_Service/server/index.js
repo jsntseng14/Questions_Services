@@ -24,6 +24,10 @@ app.listen(PORT, () => {
 
 });
 
+app.get('/loaderio-eb6ed5c9c9104fbe297cb03b7ad6cbe7', (req, res) => {
+  res.send('loaderio-eb6ed5c9c9104fbe297cb03b7ad6cbe7');
+})
+
 app.get('/qa/questions', (req, res) => {
   var id = req.query.product_id;
   question.findQuestions(id, (error, results) => {
